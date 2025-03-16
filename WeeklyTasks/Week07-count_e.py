@@ -2,11 +2,15 @@
 # This program takes one txt file and counts how many 'E' contains
 # By Ignacio Riboldi
 
+
+"IMPORTANT NOTE: for this program to work you should run it using " "python Week07-count_e.py + fileName.txt"
+
+
 import sys
 import os
 
 def count_e_in_file(filename):
-    """Counts the number of 'e' characters in a given text file."""
+    
     try:
         with open(filename, 'r') as file:
             content = file.read()
@@ -23,14 +27,13 @@ def count_e_in_file(filename):
         return None
 
 def main():
-    """Main function that takes a command-line argument (filename) and counts 'e' characters."""
+
     if len(sys.argv) != 2:
         print("Usage: python count_e.py <filename>")
         sys.exit(1)
 
     filename = sys.argv[1]
 
-    # Check if the file exists and is a regular file (not a directory)
     if not os.path.isfile(filename):
         print(f"Error: '{filename}' is not a valid file.")
         sys.exit(1)
